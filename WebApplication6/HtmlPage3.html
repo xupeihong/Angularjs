@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oul = document.getElementById("ul");
+            var oli = oul.getElementsByTagName("li");
+            var obtn = document.getElementById("btn");
+            var inow = 3;
+            //for (var i = 0; i < oli.length; i++) {
+            //    oli[i].onmouseover = function () {
+            //        this.style.background = "red";
+            //    }
+            //    oli[i].onmouseout = function () {
+            //        this.style.background = "";
+            //    }
+            //}
+            oul.onmouseover = function (ev) {
+                var ev = ev || window.event;
+                var target = ev.target || ev.srcElement;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = "red";
+                    target.style.width = "150px";
+                }
+            }
+            oul.onmouseout = function (ev) {
+                var ev = ev || window.event;
+                var target = ev.target || ev.srcElement;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = "";
+                }
+            }
+            obtn.onclick = function () {
+                inow++;
+                var ili = document.createElement("li");
+                ili.innerHTML = 11 * inow;
+                oul.appendChild(ili);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="添加" />
+    <ul id="ul">
+        <li>sdfdsf</li>
+        <li>wqeqwew</li>
+    </ul>
+</body>
+</html>

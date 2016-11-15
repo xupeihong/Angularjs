@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        //function clone(obj) {
+        //    var buf;
+        //    switch (typeof obj) {
+        //        case "undefined":
+        //            break;
+        //        case "string":
+        //            buf = obj + "";
+        //            break;
+        //        case "number":
+        //            buf = obj - 0;
+        //            break;
+        //        case "boolean":
+        //            buf = obj;
+        //            break;
+        //        case "object"://object分对象和数组
+        //            if (obj == null) {
+        //                buf = null;
+        //            } else {
+        //                if (Object.prototype.toString.call(obj).slice(8, -1) == "Array") {
+        //                    buf = [];
+        //                    for (var i = 0; i < obj.length; i++) {
+        //                        buf.push(clone(obj[i]));
+        //                    }
+        //                } else {
+        //                    buf = {};
+        //                    for (var k in obj) {
+        //                        buf[k] = clone(obj[k]);
+        //                    }
+        //                }
+        //            }
+        //            break;
+        //        default:
+        //            buf = obj;
+        //            break;
+        //    }
+        //    return buf;
+        //}
+
+        function clone(obj) {
+            var buf;
+            switch (typeof obj) {
+                case "undefined":
+                    break;
+                case "number":
+                    buf = obj - 0;
+                    break;
+                case "string":
+                    buf = obj + "";
+                    break;
+                case "boolean":
+                    buf = obj;
+                    break;
+                case "object":
+                    if (obj == null) {
+                        buf = null;
+                    } else {
+                        if (Object.prototype.toString.call(obj).slice(8, -1) == "Array") {
+                            buf = [];
+                            for (var i = 0; i < obj.length; i++) {
+                                buf.push(clone(oj[i]));
+                            }
+                        } else {
+                            buf = {};
+                            for (var k in obj) {
+                                buf[k] = clone(obj[k]);
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    buf = obj;
+                    break;
+            }
+            return buf;
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

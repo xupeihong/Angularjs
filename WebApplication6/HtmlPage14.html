@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        function gettime() {
+            var endtime = new Date('2013/05/1 10:00:00');
+            var nowtime = new Date();
+            var t = endtime.getTime() - nowtime.getTime();
+            var d = Math.floor(t / 1000 / 60 / 60 / 24);
+            var h = Math.floor(t / 1000 / 60 / 60 % 24);
+            var m = Math.floor(t / 1000 / 60 % 60);
+            var s = Math.floor(t / 1000 % 60);
+            document.getElementById("t_d").innerHTML = d + "天";
+            document.getElementById("t_h").innerHTML = h + "时";
+            document.getElementById("t_m").innerHTML = m + "分";
+            document.getElementById("t_s").innerHTML = s + "秒";
+        }
+        setInterval(gettime, 1000);
+    </script>
+</head>
+<body>
+    <span id="t_d">00天</span>
+    <span id="t_h">00时</span>
+    <span id="t_m">00分</span>
+    <span id="t_s">00秒</span>
+</body>
+</html>

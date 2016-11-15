@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>数组去重</title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        var arr1 = [1, 2, 2, 2, 3, 3, 3, 4, 5, 6];
+        //var arr2 = [];
+        //for (var i = 0; i < arr.length; i++) {
+        //    if (arr2.indexOf(arr[i]) < 0) {
+        //        arr2.push(arr[i]);
+        //    }
+        //}
+        //document.write(arr2);
+
+        // 方法一
+        //Array.prototype.arr = function () {
+        //    //直接定义结果数组
+        //    var arr = [this[0]];
+        //    for (var i = 1; i < this.length; i++) {    //从数组第二项开始循环遍历此数组
+        //        //对元素进行判断：
+        //        //如果数组当前元素在此数组中第一次出现的位置不是i
+        //        //那么我们可以判断第i项元素是重复的，否则直接存入结果数组
+        //        if (this.indexOf(this[i]) == i) {
+        //            arr.push(this[i]);
+        //        }
+        //    }
+        //    return arr;
+        //}
+        //document.write(arr.arr());
+
+        //方法二
+        //Array.prototype.method2 = function () {
+        //    var arr = [];
+        //    for (var i = 0; i < this.length; i++) {
+        //        if (arr.indexOf(this[i]) == -1) {
+        //            arr.push(this[i]);
+        //        }
+        //    }
+        //    return arr;
+        //}
+        //document.write(arr1.method2());
+
+        //方法三
+        //Array.prototype.method3 = function () {
+        //    var h = {};    //hash表
+        //    var arr = [];    //临时数组
+        //    for (var i = 0; i < this.length; i++) {
+        //        if (!h[this[i]]) {
+        //            h[this[i]] = true;
+        //            arr.push(this[i]);
+        //        }
+        //    }
+        //    return arr;
+        //}
+        //document.write(arr1.method3());
+
+        var ww = document.documentElement.clientWidth;
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

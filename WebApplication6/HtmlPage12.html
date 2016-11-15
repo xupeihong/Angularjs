@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>统计字母最多个数</title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        //var str = "aaaabbbccccddfgh";
+        //var obj = {};
+        //for (var i = 0; i < str.length; i++) {
+        //    var v = str.charAt(i);
+        //    if (obj[v] && obj[v].value == v) {
+        //        obj[v].count = ++obj[v].count;
+        //    } else {
+        //        obj[v] = {};
+        //        obj[v].count = 1;
+        //        obj[v].value = v;
+        //    }
+        //}
+        //for (key in obj) {
+        //    document.write(obj[key].value + '=' + obj[key].count + ',');
+        //}
+
+
+
+        var str = "hello";
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var v = str.charAt(i); //获得每个字符
+            if (obj[v] && obj[v].value == v) {   //筛选
+                obj[v].count = ++obj[v].count;         //记录每个重复的字符个数
+            } else {
+                obj[v] = {};
+                obj[v].count = 1;
+                obj[v].value = v;
+            }
+        }
+        for (key in obj) {
+            document.write(obj[key].value + '=' + obj[key].count + ',');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

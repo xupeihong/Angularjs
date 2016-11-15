@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        //克隆
+        //function clone(arr) {
+        //    var buf;
+        //    switch (arr) {
+        //        case "undefined":
+        //            break;
+        //        case "string":
+        //            buf = arr + "";
+        //            break;
+        //        case "number":
+        //            buf = arr - 0;
+        //            break;
+        //        case "object":
+        //            if (arr == null) {
+        //                buf = null;
+        //            }
+        //            else {
+        //                if (Object.prototype.toString.call(arr).slice(8, -1) == "Array") {
+        //                    buf = [];
+        //                    for (var i = 0; i < arr.length; i++) {
+        //                        buf.push(clone(arr[i]));
+        //                    }
+        //                } else {
+        //                    buf = {};
+        //                    for (var k in arr) {
+        //                        buf[k] = clone(arr[k]);
+        //                    }
+        //                }
+        //            }
+        //            break;
+        //        default:
+        //            buf = arr;
+        //            break;
+        //    }
+        //    return buf;
+        //}
+        ////去重
+        //var arrr = [1, 2, 3, 3, 3, 2, 4];
+        //var obj = [];
+        //for (var i = 0; i < arrr.length; i++) {
+        //    if (obj.indexOf(arrr[i]) < 0) {
+        //        obj.push(arrr[i]);
+        //    }
+        //}
+        //alert(obj);
+        ////记录子，字母个数
+        //var str = "hello";
+        //var str2 = {};
+        //for (var i = 0; i < str.length; i++) {
+        //    var v = str.charAt(i);
+        //    if (str2[v] && str2[v].value == v) {
+        //        str2[v].count = ++str2[v].count;
+        //    } else {
+        //        str2[v] = {};
+        //        str2[v].value = v;
+        //        str2[v].count = 1;
+
+        //    }
+        //}
+        //for (key in str2) {
+        //    document.write(str2[key].value + "=" + str2[key].count + ",");
+        //}
+
+
+
+
+
+
+
+
+
+        //去重
+        //var arr = [1, 1, 2, 3, 2];
+        //var obj = [];
+        //for (var i = 0; i < arr.length; i++) {
+        //    if (obj.indexOf(arr[i]) < 0) {
+        //        obj.push(arr[i]);
+        //    }
+        //}
+        //alert(obj);
+
+
+        //记录个数
+        var str = "hello";
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var v = str.charAt(i);
+            if (obj[v] && obj[v].value == v) {
+                obj[v].count = ++obj[v].count;
+            } else {
+                obj[v] = {};
+                obj[v].value = v;
+                obj[v].count = 1;
+            }
+        }
+        for (key in obj) {
+            document.write(obj[key].value + "=" + obj[key].count + "，");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

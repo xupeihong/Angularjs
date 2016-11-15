@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            //事件委托
+            var oul = document.getElementById("ul");
+            var uli = oul.getElementsByTagName("li");
+            oul.onmouseover = function (ev) {
+                var ev = ev || window.event;
+                var target = ev.srcElement || ev.target;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = "yellow";
+                }
+            }
+            oul.onmouseout = function (ev) {
+                var ev = ev || window.event;
+                var target = ev.target || ev.srcElement;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = "";
+                }
+
+            }
+            //普通的事件
+            //for (var i = 0; i < uli.length; i++) {
+            //    uli[i].onmouseover = function () {
+            //        this.style.background = "red";
+            //        this.style.width = "150px";
+            //    }
+            //    uli[i].onmouseout = function () {
+            //        this.style.background = "";
+            //    }
+            //}
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul">
+        <li>wfdfdsfdsf</li>
+        <li>wfdfdsfd3432sf</li>
+        <li>wfdfdsf12d23sf</li>
+        <li>wfdfdsfd6565sf</li>
+    </ul>
+</body>
+</html>

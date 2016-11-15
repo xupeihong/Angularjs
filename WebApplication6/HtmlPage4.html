@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        //function a() {
+        //    var s = [0, 2, 3, 4, 4, 0, 2];
+        //    for (var i = 0, o = {}, temp = [], count = 0, l = s.length; i < l; i++) {
+        //        if (o[s[i]]) {
+        //            count++;
+        //        } else {
+        //            o[s[i]] = 1;
+        //            temp.push(s[i]);
+        //        }
+        //    }
+        //    alert(count);
+        //    alert(temp);
+        //}
+        //function unique4(array) {
+        //array.sort();
+        //var re=[array[0]];
+        //for(var i = 1; i < array.length; i++){
+        //    if( array[i] !== re[re.length-1])
+        //    {
+        //        re.push(array[i]);
+        //    }
+        //}
+        //return re;
+        //}
+        //var array = [0, 2, 3, 4, 4, 0, 2];
+        //function unique3(array) {
+        //    var n = [array[0]]; //结果数组
+        //    //从第二项开始遍历
+        //    for (var i = 1; i < array.length; i++) {
+        //        //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
+        //        //那么表示第i项是重复的，忽略掉。否则存入结果数组
+        //        if (array.indexOf(array[i]) == i) n.push(array[i]);
+        //    }
+        //    return n;
+        //}
+
+        //function unique1(array) {
+        var n = []; //一个新的临时数组
+        var array = [0, 2, 3, 4, 4, 0, 2];
+        //遍历当前数组
+        for (var i = 0; i < array.length; i++) {
+            //如果当前数组的第i已经保存进了临时数组，那么跳过，
+            //否则把当前项push到临时数组里面
+            if (n.indexOf(array[i]) == -1) n.push(array[i]);
+        }
+        //return n;
+        alert(n)
+        alert(array);
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

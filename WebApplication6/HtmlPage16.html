@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>克隆</title>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        function clone(obj) {
+            var buf;
+            switch (obj) {
+                case "undefiend":
+                    break;
+                case "string":
+                    buf = obj + "";
+                    break;
+                case "number":
+                    buf = obj - 0;
+                    break;
+                case "boolean":
+                    buf = obj;
+                    break;
+                case "object":
+                    if (obj == null) {
+                        buf = null;
+                    } else {
+                        if (Object.prototype.toString.call(obj).slice(8, -1) == "Array") {
+                            buf = [];
+                            for (var i = 0; i < obj.length; i++) {
+                                buf.push(clone(objp[i]));
+                            }
+                        }
+                        else {
+                            buf = {};
+                            for (var k in obj) {
+                                buf[k] = clone(obj[k]);
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    buf = obj;
+                    break;
+
+            }
+            return buf;
+        }
+        //去重
+        var arr = [1, 2, 3, 3, 4, 4];
+        var arr1 = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr1.indexOf(arr[i]) < 0) {
+                arr1.push(arr[i]);
+            }
+        }
+        document.write(arr1);
+
+        //统计出现次数
+        var str = "hello";
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var v = str.charAt(i);
+            if (obj[v] && obj[v].value == v) {
+                obj[v].count = ++obj[v].count;
+            } else {
+                obj[v] = {};
+                obj[v].count = 1;
+                obj[v].value = v;
+            }
+        }
+        for (key in obj) {
+            document.write(obj[key].value + "-" + obj[key].count + ",");
+        }
+        //去前后空格
+        function trimew(str) {
+            if (str && typeof (str) == "string") {
+                return str.replace(/(^\s*)|(\s*)$/g, "");
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
